@@ -1,0 +1,19 @@
+{
+  "id": "dont-play-that-song",
+  "name": "千万不要放那首歌",
+  "description": "不要播放那首歌……",
+  "version": "0.1.0",
+  "frontend": "ui.mjs",
+  "permissions": ["player:read", "ui", "window:manage"],
+  "engines": {
+    "app": "^1.0.0",
+    "pluginApi": "^2.0.0",
+    "uiApi": "^2.0.0"
+  },
+  "contributes": {
+    "views": [{ "id": "trigger", "slot": "main.overlay", "export": "GenshinStartTrigger" }],
+    "pages": [],
+    "navigation": [],
+    "windows": [{ "id": "cutscene", "export": "CutsceneWindow" }]
+  }
+}
