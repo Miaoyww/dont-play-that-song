@@ -1,8 +1,8 @@
 {
   "id": "dont-play-that-song",
   "name": "千万不要放那首歌",
-  "description": "不要播放那首歌……",
-  "version": "0.1.0",
+  "description": "人, 你可以播放Shed A Light(bushi)",
+  "version": "1.0.0",
   "frontend": "ui.mjs",
   "permissions": ["player:read", "ui", "window:manage"],
   "engines": {
