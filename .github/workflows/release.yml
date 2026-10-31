@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 11.20.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Check tag version
+        run: |
+          node -e "const manifest = require('./manifest.json'); const version = process.env.GITHUB_REF_NAME.replace(/^v/, ''); if (manifest.version !== version) { console.error('tag ' + process.env.GITHUB_REF_NAME + ' 与 manifest ' + manifest.version + ' 不一致'); process.exit(1); }"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm build
+
+      - name: Publish release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh release create "$GITHUB_REF_NAME" ncm-converter-*.zip --title "$GITHUB_REF_NAME" --generate-notes
