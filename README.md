@@ -6,9 +6,13 @@
 
 插件使用 `player:read`、`ui` 和 `window:manage` 权限。独立窗口功能当前仅支持 Windows。若宿主 WebView 阻止带声音自动播放，窗口会显示“点击开始播放”按钮。
 
+视频文件随插件打包，由宿主从本地插件目录读取并由 WebView 播放，不依赖网络。
+
 ## 构建与验证
 
 要求 Node.js 22 或更新版本和 pnpm 11。
+
+开发依赖以 `file:../../Nons/packages/plugin-sdk` 引用 SDK，假定两个仓库并列检出为 `NonsPlayersProject/Nons` 与 `NonsPlayersProject/repos`。
 
 ```powershell
 pnpm install --frozen-lockfile

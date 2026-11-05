@@ -1,7 +1,7 @@
 {
   "name": "nons-plugin-genshin-start",
   "private": true,
-  "version": "1.0.0",
+  "version": "2.0.0",
   "type": "module",
   "packageManager": "pnpm@11.20.0",
   "scripts": {
@@ -11,7 +11,7 @@
     "format:check": "prettier --check . --ignore-unknown"
   },
   "devDependencies": {
-    "@nonsplayer/plugin-sdk": "^2.1.0",
+    "@nonsplayer/plugin-sdk": "file:../../Nons/packages/plugin-sdk",
     "@types/react": "^19.1.8",
     "prettier": "3.9.9",
     "react": "^19.1.0"

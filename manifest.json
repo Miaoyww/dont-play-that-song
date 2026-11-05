@@ -2,13 +2,13 @@
   "id": "dont-play-that-song",
   "name": "千万不要放那首歌",
   "description": "人, 你可以播放Shed A Light(bushi)",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "frontend": "ui.mjs",
   "permissions": ["player:read", "ui", "window:manage"],
   "engines": {
     "app": "^1.0.0",
-    "pluginApi": "^2.0.0",
-    "uiApi": "^2.0.0"
+    "pluginApi": "^3.0.0",
+    "uiApi": "^3.0.0"
   },
   "contributes": {
     "views": [{ "id": "trigger", "slot": "main.overlay", "export": "GenshinStartTrigger" }],
