@@ -11,26 +11,33 @@ permissions:
 jobs:
   release:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: repos/genshin-start
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          path: repos/genshin-start
 
       - name: Checkout SDK
         uses: actions/checkout@v4
         with:
           repository: Miaoyww/Nons
-          path: ../../Nons
+          path: Nons
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 11.20.0
+          package_json_file: repos/genshin-start/package.json
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
+          cache-dependency-path: repos/genshin-start/pnpm-lock.yaml
 
       - name: Check tag version
         run: |
