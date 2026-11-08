@@ -8,8 +8,8 @@ importers:
   .:
     devDependencies:
       '@nonsplayer/plugin-sdk':
-        specifier: file:../../Nons/packages/plugin-sdk
-        version: file:../../Nons/packages/plugin-sdk(react@19.3.1)
+        specifier: 3.0.0
+        version: 3.0.0(react@19.3.1)
       '@types/react':
         specifier: ^19.1.8
         version: 19.3.0
@@ -21,8 +21,11 @@ importers:
         version: 19.3.1
 
 packages:
-  '@nonsplayer/plugin-sdk@file:../../Nons/packages/plugin-sdk':
-    resolution: { directory: ../../Nons/packages/plugin-sdk, type: directory }
+  '@nonsplayer/plugin-sdk@3.0.0':
+    resolution:
+      {
+        integrity: sha512-0eEWnOtUAvm7MOq1MhWZsazFF9O5qj2ZZbYsh0XHkSA8yiFJbr+CEb4uQh5vnShNB4dUkzcOfibRuMBTEGDFyg==
+      }
     engines: { node: '>=22' }
     hasBin: true
     peerDependencies:
@@ -495,7 +498,7 @@ packages:
         optional: true
 
 snapshots:
-  '@nonsplayer/plugin-sdk@file:../../Nons/packages/plugin-sdk(react@19.3.1)':
+  '@nonsplayer/plugin-sdk@3.0.0(react@19.3.1)':
     dependencies:
       '@types/react': 19.3.0
       ajv: 8.20.0

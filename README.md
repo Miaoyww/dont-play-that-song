@@ -12,7 +12,7 @@
 
 要求 Node.js 22 或更新版本和 pnpm 11。
 
-开发依赖以 `file:../../Nons/packages/plugin-sdk` 引用 SDK，假定两个仓库并列检出为 `NonsPlayersProject/Nons` 与 `NonsPlayersProject/repos`。
+开发依赖使用 npm 发布的 `@nonsplayer/plugin-sdk@3.0.0`，按锁文件安装即可，无需检出 Nons 源码。
 
 ```powershell
 pnpm install --frozen-lockfile

@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- 构建改用 npm 发布的插件 SDK 3.0.0，无需检出 Nons 源码；CI 与 Release 直接安装发布包。
+
 ## 2.0.0
 
 ### Breaking
